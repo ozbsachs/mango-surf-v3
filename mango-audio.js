@@ -1118,8 +1118,48 @@
     N.caveVerb.connect(chp); chp.connect(cave); cave.connect(cout); cout.connect(N.sfxBus);
     return true;
   }
-  function heavy() {
+  // smooth-anim 2026-10-29: the long renders (two reverb impulses, pink/brown/crackle noise, the three splashes, the wash,
+  // the stream) ran on the page's thread at the first tap, as one 0.3-0.6 s freeze of the first spin on a slow phone. They
+  // are pure maths, so a worker makes them from the same functions' source (a stand-in ctx with the real sample rate)
+  // and the page only copies the samples into AudioBuffers. Until a buffer arrives its sound falls back as before (white
+  // noise for the noises, no reverb tail, no ocean sample). No worker (or it fails): the old path below, unchanged.
+  var HW = null;
+  function heavyWorker() {
+    try {
+      if (!root.Worker || !root.Blob || !root.URL || !ctx.copyToChannel && !(ctx.createBuffer(1, 1, ctx.sampleRate).copyToChannel)) return false;
+      var src = 'var ctx;' + [seeded, rBubble, rGrain, norm, renderSplash, renderWash, renderStream, makeIR, makeNoise].map(String).join(';\n') +
+        ';\nonmessage=function(e){var sr=e.data.sr;ctx={sampleRate:sr,createBuffer:function(n,len){var c=[];for(var i=0;i<n;i++)c.push(new Float32Array(len));return{c:c,getChannelData:function(i){return c[i];}};}};' +
+        'e.data.jobs.forEach(function(j){var b=j[0]==="ir"?makeIR(j[1],j[2]):j[0]==="noise"?makeNoise(j[1],j[2]):j[0]==="splash"?renderSplash(j[1]):j[0]==="wash"?renderWash(j[1]):renderStream(j[1]);' +
+        'postMessage({id:j[3],c:b.c},b.c.map(function(x){return x.buffer;}));});};';
+      var url = URL.createObjectURL(new Blob([src], { type: 'text/javascript' })), w = new Worker(url);
+      var put = {
+        ir1: function (b) { N.conv.buffer = b; }, ir2: function (b) { N.cave.buffer = b; },
+        pink: function (b) { pinkBuf = b; }, brown: function (b) { brownBuf = b; }, crack: function (b) { crackBuf = b; },
+        s0: function (b) { OCEAN.splash[0] = b; }, wash: function (b) { OCEAN.wash = b; }, s1: function (b) { OCEAN.splash[1] = b; },
+        stream: function (b) { OCEAN.stream = b; }, s2: function (b) { OCEAN.splash[2] = b; }
+      }, left = Object.keys(put).length;
+      w.onmessage = function (e) {
+        var d = e.data, c = d.c, b = ctx.createBuffer(c.length, c[0].length, ctx.sampleRate);
+        for (var i = 0; i < c.length; i++) b.copyToChannel(c[i], i);
+        // a reverb buffer costs its FFT set-up on the page's thread when it is set (~0.2 s on a slow phone): never mid-round
+        var set = function () { if (held()) { setTimeout(set, 300); return; } try { put[d.id](b); } catch (x) {} };
+        if (d.id === 'ir1' || d.id === 'ir2') (root.requestIdleCallback || setTimeout)(set, { timeout: 4000 }); else set();
+        if (--left <= 0) { w.terminate(); URL.revokeObjectURL(url); }
+      };
+      w.onerror = function () { try { w.terminate(); } catch (x) {} if (left > 0) { left = 0; heavySync(true); } };
+      w.postMessage({ sr: ctx.sampleRate, jobs: [['ir', 1.7, false, 'ir1'], ['ir', 3.4, true, 'ir2'], ['noise', 'pink', 3, 'pink'], ['noise', 'brown', 3, 'brown'],
+        ['noise', 'crackle', 3, 'crack'], ['splash', 11, 0, 's0'], ['wash', 7, 0, 'wash'], ['splash', 23, 0, 's1'], ['stream', 5, 0, 'stream'], ['splash', 37, 0, 's2']] });
+      HW = w; return true;
+    } catch (e) { return false; }
+  }
+  function heavySync(late) {
     N.conv.buffer = makeIR(1.7); N.cave.buffer = makeIR(3.4, true);
+    pinkBuf = makeNoise("pink", 3); brownBuf = makeNoise("brown", 3); crackBuf = makeNoise("crackle", 3);
+    if (late) renderOcean();
+  }
+  function heavy() {
+    var inWorker = heavyWorker();
+    if (!inWorker) { N.conv.buffer = makeIR(1.7); N.cave.buffer = makeIR(3.4, true); }
 
     var len = Math.floor(ctx.sampleRate * 2);
     noiseBuf = ctx.createBuffer(1, len, ctx.sampleRate);
@@ -1127,9 +1167,9 @@
     for (var i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
     curveSoft = makeCurve(1.1);
     curveHard = makeCurve(4);
-    pinkBuf = makeNoise("pink", 3); brownBuf = makeNoise("brown", 3); crackBuf = makeNoise("crackle", 3);
+    if (!inWorker) pinkBuf = makeNoise("pink", 3), brownBuf = makeNoise("brown", 3), crackBuf = makeNoise("crackle", 3);
     setTimeout(warmStrings, 400);
-    setTimeout(renderOcean, 60);
+    if (!inWorker) setTimeout(renderOcean, 60);
     setTimeout(loadKit, 1200);
     setTimeout(ambience, 4000);
     return true;
@@ -1779,6 +1819,7 @@
     tideLevel: safe(tideLevel),
     paddleUp: safe(paddleUp),
     paddleBadge: safe(paddleBadge),
+    _v3: function () { return ok() ? { ctx: ctx, sfx: N.sfxBus, verb: N.sfxVerb, music: N.musicBus } : null; },   // v3-sound.js layers its synth cues on these buses (mute-all and SFX volume still apply)
     _debug: debug
   };
 })(typeof window !== 'undefined' ? window : null);
