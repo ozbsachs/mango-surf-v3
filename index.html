@@ -581,12 +581,12 @@ canvas{width:100%;display:block;background:var(--field)}
 @media (prefers-reduced-motion:reduce){.reel.tease{animation:none;box-shadow:inset 4px 0 0 var(--gl),inset -4px 0 0 var(--gl)}.grid .c.tape{animation:none}}
 /* ---------- full-screen slot ---------- */
 html,body{height:100%}
-body:has(.slot:not([hidden])){overflow:hidden}
+body.h-slot{overflow:hidden}
 .slot{position:fixed;inset:0;display:grid;grid-template-rows:auto minmax(0,1fr) auto;overflow:hidden;color:#fff}
 .slot[hidden]{display:none}
 /* the skate park fills the screen; the same park at night during bonuses */
 .scene{position:absolute;inset:0;z-index:0;background:#7FD3FF url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201600%20900%22%20preserveAspectRatio%3D%22xMidYMax%20slice%22%3E%20%3Cdefs%3E%20%3ClinearGradient%20id%3D%22sky%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237FD3FF%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23E2F6FF%22%2F%3E%3C%2FlinearGradient%3E%20%3ClinearGradient%20id%3D%22bowl%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%238f8a82%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23c2bcb2%22%2F%3E%3C%2FlinearGradient%3E%20%3ClinearGradient%20id%3D%22ramp%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%220%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23e9b86b%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23c98f3e%22%2F%3E%3C%2FlinearGradient%3E%20%3C%2Fdefs%3E%20%3Crect%20width%3D%221600%22%20height%3D%22900%22%20fill%3D%22url(%23sky)%22%2F%3E%20%3Cg%20stroke%3D%22%23141414%22%20stroke-width%3D%226%22%3E%3Ccircle%20cx%3D%221420%22%20cy%3D%22150%22%20r%3D%2270%22%20fill%3D%22%23ffe14a%22%2F%3E%3Cg%20transform%3D%22translate(90%20120)%20scale(2.6)%22%3E%3Cpath%20d%3D%22M60%2092q12-26%2040-14q22-20%2044%202q26-4%2026%2018H54q-8%200%206-6z%22%20fill%3D%22%23fff%22%20stroke-width%3D%222.4%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(560%2040)%20scale(2.2)%22%3E%3Cpath%20d%3D%22M250%2060q10-20%2032-10q18-14%2034%202q22-2%2020%2014H244q-6%200%206-6z%22%20fill%3D%22%23fff%22%20stroke-width%3D%222.6%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%20%3Cg%20stroke%3D%22%23141414%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22%3E%20%3C!--%20chain-link%20fence%20along%20the%20back%20--%3E%20%3Cg%20transform%3D%22translate(0%20322)%20scale(2.667)%22%20stroke-width%3D%222.5%22%3E%20%3Cpath%20d%3D%22M0%2074H600M0%20100H600%22%2F%3E%20%3Cpath%20stroke-width%3D%221.2%22%20stroke-opacity%3D%22.3%22%20d%3D%22M0%2074L26%20100M20%2074L46%20100M40%2074L66%20100M60%2074L86%20100M80%2074L106%20100M100%2074L126%20100M120%2074L146%20100M140%2074L166%20100M160%2074L186%20100M180%2074L206%20100M200%2074L226%20100M220%2074L246%20100M240%2074L266%20100M260%2074L286%20100M280%2074L306%20100M300%2074L326%20100M320%2074L346%20100M340%2074L366%20100M360%2074L386%20100M380%2074L406%20100M400%2074L426%20100M420%2074L446%20100M440%2074L466%20100M460%2074L486%20100M480%2074L506%20100M500%2074L526%20100M520%2074L546%20100M540%2074L566%20100M560%2074L586%20100M580%2074L606%20100%22%2F%3E%20%3Cpath%20d%3D%22M30%2068V104M150%2068V104M270%2068V104M390%2068V104M510%2068V104%22%20stroke-width%3D%223.5%22%2F%3E%20%3C%2Fg%3E%20%3C!--%20concrete%20ground%20with%20joints%20--%3E%20%3Cpath%20d%3D%22M-10%20610H1610V910H-10Z%22%20fill%3D%22%23cfc9be%22%20stroke-width%3D%227%22%2F%3E%20%3Cpath%20d%3D%22M0%20720H1600M0%20820H1600M330%20610L270%20900M800%20610L800%20900M1270%20610L1330%20900%22%20stroke-width%3D%223%22%20stroke-opacity%3D%22.25%22%20fill%3D%22none%22%2F%3E%20%3C!--%20quarter%20pipe%20on%20the%20left%3A%20plywood%20face%2C%20steel%20coping%2C%20deck%20and%20rail%20--%3E%20%3Cg%20transform%3D%22translate(-537%20371)%20scale(2.4)%22%20stroke-width%3D%223%22%3E%20%3Cpath%20d%3D%22M232%20112Q322%20112%20328%2034H360V112Z%22%20fill%3D%22url(%23ramp)%22%2F%3E%20%3Cpath%20d%3D%22M360%2034H398V112H360Z%22%20fill%3D%22%23b37c34%22%2F%3E%20%3Cpath%20d%3D%22M328%2034H398%22%20stroke-width%3D%227%22%20stroke%3D%22%238d939b%22%2F%3E%20%3Cpath%20d%3D%22M328%2034H398%22%20stroke-width%3D%222%22%2F%3E%20%3Cpath%20d%3D%22M336%2034V14M390%2034V14M336%2014H390%22%20stroke-width%3D%224%22%20fill%3D%22none%22%2F%3E%20%3Cpath%20d%3D%22M258%20106Q312%20102%20320%2050%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-opacity%3D%22.45%22%20stroke-width%3D%224%22%2F%3E%20%3Ctext%20x%3D%22362%22%20y%3D%2282%22%20font-family%3D%22Consolas%2Cmonospace%22%20font-weight%3D%22bold%22%20font-size%3D%2217%22%20fill%3D%22%23ff2fb0%22%20stroke%3D%22%23141414%22%20stroke-width%3D%221.2%22%20transform%3D%22rotate(-8%20378%2076)%22%3ESK8%3C%2Ftext%3E%20%3C%2Fg%3E%20%3C!--%20bowl%20sunk%20into%20the%20ground%2C%20front%20left%2C%20with%20blue%20pool%20coping%20--%3E%20%3Cg%20transform%3D%22translate(296%20436)%20scale(2.4)%22%20stroke-width%3D%223%22%3E%20%3Cpath%20d%3D%22M14%20124Q14%20110%20110%20110Q206%20110%20206%20124Q206%20148%20110%20149Q14%20148%2014%20124Z%22%20fill%3D%22url(%23bowl)%22%2F%3E%20%3Cpath%20d%3D%22M30%20126Q34%20117%20110%20117Q186%20117%20190%20126Q184%20142%20110%20143Q36%20142%2030%20126Z%22%20fill%3D%22%23a39d93%22%20stroke-width%3D%222%22%2F%3E%20%3Cpath%20d%3D%22M14%20124Q14%20110%20110%20110Q206%20110%20206%20124%22%20fill%3D%22none%22%20stroke%3D%22%232d6cdf%22%20stroke-width%3D%227%22%2F%3E%20%3Cpath%20d%3D%22M14%20124Q14%20110%20110%20110Q206%20110%20206%20124%22%20fill%3D%22none%22%20stroke-width%3D%222.5%22%20stroke-dasharray%3D%222%2014%22%2F%3E%20%3C%2Fg%3E%20%3C!--%20stairs%20with%20a%20handrail%20on%20the%20right%20--%3E%20%3Cg%20transform%3D%22translate(146%20371)%20scale(2.4)%22%20stroke-width%3D%223%22%3E%20%3Cpath%20d%3D%22M478%2044H610V112H478Z%22%20fill%3D%22%23b9b3a8%22%2F%3E%20%3Cpath%20d%3D%22M478%2044H610V56H478Z%22%20fill%3D%22%23dfd9ce%22%2F%3E%20%3Cpath%20d%3D%22M460%2056H610V70H460Z%22%20fill%3D%22%23d2ccc1%22%2F%3E%20%3Cpath%20d%3D%22M442%2070H610V84H442Z%22%20fill%3D%22%23c6c0b5%22%2F%3E%20%3Cpath%20d%3D%22M424%2084H610V98H424Z%22%20fill%3D%22%23bbb5aa%22%2F%3E%20%3Cpath%20d%3D%22M406%2098H610V112H406Z%22%20fill%3D%22%23b0aa9f%22%2F%3E%20%3Cpath%20d%3D%22M414%2080L500%2018%22%20fill%3D%22none%22%20stroke-width%3D%226%22%20stroke%3D%22%23ffd21f%22%2F%3E%20%3Cpath%20d%3D%22M414%2080L500%2018%22%20fill%3D%22none%22%20stroke-width%3D%222%22%2F%3E%20%3Cpath%20d%3D%22M422%2074V100M452%2052V78M482%2031V52%22%20stroke-width%3D%224%22%2F%3E%20%3C%2Fg%3E%20%3C!--%20a%20grind%20rail%20and%20cones%20in%20the%20middle%20foreground%20--%3E%20%3Cpath%20d%3D%22M940%20760H1240%22%20stroke-width%3D%2216%22%20stroke%3D%22%23ff2fb0%22%2F%3E%3Cpath%20d%3D%22M940%20760H1240%22%20stroke-width%3D%226%22%2F%3E%20%3Cpath%20d%3D%22M970%20760V820M1210%20760V820%22%20stroke-width%3D%229%22%2F%3E%20%3Cg%20stroke-width%3D%226%22%3E%3Cpath%20d%3D%22M880%20840L898%20790L916%20840Z%22%20fill%3D%22%23ff8a1e%22%2F%3E%3Cpath%20d%3D%22M886%20822H910%22%20stroke%3D%22%23fff%22%20stroke-width%3D%225%22%2F%3E%3C%2Fg%3E%20%3Cg%20stroke-width%3D%226%22%3E%3Cpath%20d%3D%22M1290%20850L1308%20800L1326%20850Z%22%20fill%3D%22%23ff8a1e%22%2F%3E%3Cpath%20d%3D%22M1296%20832H1320%22%20stroke%3D%22%23fff%22%20stroke-width%3D%225%22%2F%3E%3C%2Fg%3E%20%3C%2Fg%3E%20%3C%2Fsvg%3E%20") center bottom/cover no-repeat}
-.slot:has(.stage.bonus) .scene{background:#1a0b33 url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201600%20900%22%20preserveAspectRatio%3D%22xMidYMax%20slice%22%3E%20%3Cdefs%3E%20%3ClinearGradient%20id%3D%22sky%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%231a0b33%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235a1d6e%22%2F%3E%3C%2FlinearGradient%3E%20%3ClinearGradient%20id%3D%22bowl%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%238f8a82%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23c2bcb2%22%2F%3E%3C%2FlinearGradient%3E%20%3ClinearGradient%20id%3D%22ramp%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%220%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23e9b86b%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23c98f3e%22%2F%3E%3C%2FlinearGradient%3E%20%3C%2Fdefs%3E%20%3Crect%20width%3D%221600%22%20height%3D%22900%22%20fill%3D%22url(%23sky)%22%2F%3E%20%3Cg%20fill%3D%22%23fff%22%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%2290%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%22260%22%20cy%3D%22200%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%22380%22%20cy%3D%2260%22%20r%3D%225%22%2F%3E%3Ccircle%20cx%3D%22520%22%20cy%3D%22170%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2280%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%22830%22%20cy%3D%22220%22%20r%3D%225%22%2F%3E%3Ccircle%20cx%3D%22960%22%20cy%3D%2250%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%221100%22%20cy%3D%22160%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%221240%22%20cy%3D%2270%22%20r%3D%225%22%2F%3E%3Ccircle%20cx%3D%22300%22%20cy%3D%22330%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%22700%22%20cy%3D%22300%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%221050%22%20cy%3D%22320%22%20r%3D%225%22%2F%3E%3Ccircle%20cx%3D%22180%22%20cy%3D%22420%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%221500%22%20cy%3D%22330%22%20r%3D%224%22%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D%221420%22%20cy%3D%22150%22%20r%3D%2266%22%20fill%3D%22%23f4f1d0%22%20stroke%3D%22%23141414%22%20stroke-width%3D%226%22%2F%3E%3Ccircle%20cx%3D%221448%22%20cy%3D%22132%22%20r%3D%2252%22%20fill%3D%22%233a1652%22%2F%3E%20%3Cg%20stroke%3D%22%23141414%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22%3E%20%3C!--%20chain-link%20fence%20along%20the%20back%20--%3E%20%3Cg%20transform%3D%22translate(0%20322)%20scale(2.667)%22%20stroke-width%3D%222.5%22%3E%20%3Cpath%20d%3D%22M0%2074H600M0%20100H600%22%2F%3E%20%3Cpath%20stroke-width%3D%221.2%22%20stroke-opacity%3D%22.3%22%20d%3D%22M0%2074L26%20100M20%2074L46%20100M40%2074L66%20100M60%2074L86%20100M80%2074L106%20100M100%2074L126%20100M120%2074L146%20100M140%2074L166%20100M160%2074L186%20100M180%2074L206%20100M200%2074L226%20100M220%2074L246%20100M240%2074L266%20100M260%2074L286%20100M280%2074L306%20100M300%2074L326%20100M320%2074L346%20100M340%2074L366%20100M360%2074L386%20100M380%2074L406%20100M400%2074L426%20100M420%2074L446%20100M440%2074L466%20100M460%2074L486%20100M480%2074L506%20100M500%2074L526%20100M520%2074L546%20100M540%2074L566%20100M560%2074L586%20100M580%2074L606%20100%22%2F%3E%20%3Cpath%20d%3D%22M30%2068V104M150%2068V104M270%2068V104M390%2068V104M510%2068V104%22%20stroke-width%3D%223.5%22%2F%3E%20%3C%2Fg%3E%20%3C!--%20concrete%20ground%20with%20joints%20--%3E%20%3Cpath%20d%3D%22M-10%20610H1610V910H-10Z%22%20fill%3D%22%23cfc9be%22%20stroke-width%3D%227%22%2F%3E%20%3Cpath%20d%3D%22M0%20720H1600M0%20820H1600M330%20610L270%20900M800%20610L800%20900M1270%20610L1330%20900%22%20stroke-width%3D%223%22%20stroke-opacity%3D%22.25%22%20fill%3D%22none%22%2F%3E%20%3C!--%20quarter%20pipe%20on%20the%20left%3A%20plywood%20face%2C%20steel%20coping%2C%20deck%20and%20rail%20--%3E%20%3Cg%20transform%3D%22translate(-537%20371)%20scale(2.4)%22%20stroke-width%3D%223%22%3E%20%3Cpath%20d%3D%22M232%20112Q322%20112%20328%2034H360V112Z%22%20fill%3D%22url(%23ramp)%22%2F%3E%20%3Cpath%20d%3D%22M360%2034H398V112H360Z%22%20fill%3D%22%23b37c34%22%2F%3E%20%3Cpath%20d%3D%22M328%2034H398%22%20stroke-width%3D%227%22%20stroke%3D%22%238d939b%22%2F%3E%20%3Cpath%20d%3D%22M328%2034H398%22%20stroke-width%3D%222%22%2F%3E%20%3Cpath%20d%3D%22M336%2034V14M390%2034V14M336%2014H390%22%20stroke-width%3D%224%22%20fill%3D%22none%22%2F%3E%20%3Cpath%20d%3D%22M258%20106Q312%20102%20320%2050%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-opacity%3D%22.45%22%20stroke-width%3D%224%22%2F%3E%20%3Ctext%20x%3D%22362%22%20y%3D%2282%22%20font-family%3D%22Consolas%2Cmonospace%22%20font-weight%3D%22bold%22%20font-size%3D%2217%22%20fill%3D%22%23ff2fb0%22%20stroke%3D%22%23141414%22%20stroke-width%3D%221.2%22%20transform%3D%22rotate(-8%20378%2076)%22%3ESK8%3C%2Ftext%3E%20%3C%2Fg%3E%20%3C!--%20bowl%20sunk%20into%20the%20ground%2C%20front%20left%2C%20with%20blue%20pool%20coping%20--%3E%20%3Cg%20transform%3D%22translate(296%20436)%20scale(2.4)%22%20stroke-width%3D%223%22%3E%20%3Cpath%20d%3D%22M14%20124Q14%20110%20110%20110Q206%20110%20206%20124Q206%20148%20110%20149Q14%20148%2014%20124Z%22%20fill%3D%22url(%23bowl)%22%2F%3E%20%3Cpath%20d%3D%22M30%20126Q34%20117%20110%20117Q186%20117%20190%20126Q184%20142%20110%20143Q36%20142%2030%20126Z%22%20fill%3D%22%23a39d93%22%20stroke-width%3D%222%22%2F%3E%20%3Cpath%20d%3D%22M14%20124Q14%20110%20110%20110Q206%20110%20206%20124%22%20fill%3D%22none%22%20stroke%3D%22%232d6cdf%22%20stroke-width%3D%227%22%2F%3E%20%3Cpath%20d%3D%22M14%20124Q14%20110%20110%20110Q206%20110%20206%20124%22%20fill%3D%22none%22%20stroke-width%3D%222.5%22%20stroke-dasharray%3D%222%2014%22%2F%3E%20%3C%2Fg%3E%20%3C!--%20stairs%20with%20a%20handrail%20on%20the%20right%20--%3E%20%3Cg%20transform%3D%22translate(146%20371)%20scale(2.4)%22%20stroke-width%3D%223%22%3E%20%3Cpath%20d%3D%22M478%2044H610V112H478Z%22%20fill%3D%22%23b9b3a8%22%2F%3E%20%3Cpath%20d%3D%22M478%2044H610V56H478Z%22%20fill%3D%22%23dfd9ce%22%2F%3E%20%3Cpath%20d%3D%22M460%2056H610V70H460Z%22%20fill%3D%22%23d2ccc1%22%2F%3E%20%3Cpath%20d%3D%22M442%2070H610V84H442Z%22%20fill%3D%22%23c6c0b5%22%2F%3E%20%3Cpath%20d%3D%22M424%2084H610V98H424Z%22%20fill%3D%22%23bbb5aa%22%2F%3E%20%3Cpath%20d%3D%22M406%2098H610V112H406Z%22%20fill%3D%22%23b0aa9f%22%2F%3E%20%3Cpath%20d%3D%22M414%2080L500%2018%22%20fill%3D%22none%22%20stroke-width%3D%226%22%20stroke%3D%22%23ffd21f%22%2F%3E%20%3Cpath%20d%3D%22M414%2080L500%2018%22%20fill%3D%22none%22%20stroke-width%3D%222%22%2F%3E%20%3Cpath%20d%3D%22M422%2074V100M452%2052V78M482%2031V52%22%20stroke-width%3D%224%22%2F%3E%20%3C%2Fg%3E%20%3C!--%20a%20grind%20rail%20and%20cones%20in%20the%20middle%20foreground%20--%3E%20%3Cpath%20d%3D%22M940%20760H1240%22%20stroke-width%3D%2216%22%20stroke%3D%22%23ff2fb0%22%2F%3E%3Cpath%20d%3D%22M940%20760H1240%22%20stroke-width%3D%226%22%2F%3E%20%3Cpath%20d%3D%22M970%20760V820M1210%20760V820%22%20stroke-width%3D%229%22%2F%3E%20%3Cg%20stroke-width%3D%226%22%3E%3Cpath%20d%3D%22M880%20840L898%20790L916%20840Z%22%20fill%3D%22%23ff8a1e%22%2F%3E%3Cpath%20d%3D%22M886%20822H910%22%20stroke%3D%22%23fff%22%20stroke-width%3D%225%22%2F%3E%3C%2Fg%3E%20%3Cg%20stroke-width%3D%226%22%3E%3Cpath%20d%3D%22M1290%20850L1308%20800L1326%20850Z%22%20fill%3D%22%23ff8a1e%22%2F%3E%3Cpath%20d%3D%22M1296%20832H1320%22%20stroke%3D%22%23fff%22%20stroke-width%3D%225%22%2F%3E%3C%2Fg%3E%20%3C%2Fg%3E%20%3Crect%20width%3D%221600%22%20height%3D%22900%22%20fill%3D%22%23140a2a%22%20opacity%3D%22.42%22%2F%3E%20%3C%2Fsvg%3E%20") center bottom/cover no-repeat}
+.slot.h-bonus .scene{background:#1a0b33 url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201600%20900%22%20preserveAspectRatio%3D%22xMidYMax%20slice%22%3E%20%3Cdefs%3E%20%3ClinearGradient%20id%3D%22sky%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%231a0b33%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235a1d6e%22%2F%3E%3C%2FlinearGradient%3E%20%3ClinearGradient%20id%3D%22bowl%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%238f8a82%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23c2bcb2%22%2F%3E%3C%2FlinearGradient%3E%20%3ClinearGradient%20id%3D%22ramp%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%220%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23e9b86b%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23c98f3e%22%2F%3E%3C%2FlinearGradient%3E%20%3C%2Fdefs%3E%20%3Crect%20width%3D%221600%22%20height%3D%22900%22%20fill%3D%22url(%23sky)%22%2F%3E%20%3Cg%20fill%3D%22%23fff%22%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%2290%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%22260%22%20cy%3D%22200%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%22380%22%20cy%3D%2260%22%20r%3D%225%22%2F%3E%3Ccircle%20cx%3D%22520%22%20cy%3D%22170%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2280%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%22830%22%20cy%3D%22220%22%20r%3D%225%22%2F%3E%3Ccircle%20cx%3D%22960%22%20cy%3D%2250%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%221100%22%20cy%3D%22160%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%221240%22%20cy%3D%2270%22%20r%3D%225%22%2F%3E%3Ccircle%20cx%3D%22300%22%20cy%3D%22330%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%22700%22%20cy%3D%22300%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%221050%22%20cy%3D%22320%22%20r%3D%225%22%2F%3E%3Ccircle%20cx%3D%22180%22%20cy%3D%22420%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%221500%22%20cy%3D%22330%22%20r%3D%224%22%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D%221420%22%20cy%3D%22150%22%20r%3D%2266%22%20fill%3D%22%23f4f1d0%22%20stroke%3D%22%23141414%22%20stroke-width%3D%226%22%2F%3E%3Ccircle%20cx%3D%221448%22%20cy%3D%22132%22%20r%3D%2252%22%20fill%3D%22%233a1652%22%2F%3E%20%3Cg%20stroke%3D%22%23141414%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22%3E%20%3C!--%20chain-link%20fence%20along%20the%20back%20--%3E%20%3Cg%20transform%3D%22translate(0%20322)%20scale(2.667)%22%20stroke-width%3D%222.5%22%3E%20%3Cpath%20d%3D%22M0%2074H600M0%20100H600%22%2F%3E%20%3Cpath%20stroke-width%3D%221.2%22%20stroke-opacity%3D%22.3%22%20d%3D%22M0%2074L26%20100M20%2074L46%20100M40%2074L66%20100M60%2074L86%20100M80%2074L106%20100M100%2074L126%20100M120%2074L146%20100M140%2074L166%20100M160%2074L186%20100M180%2074L206%20100M200%2074L226%20100M220%2074L246%20100M240%2074L266%20100M260%2074L286%20100M280%2074L306%20100M300%2074L326%20100M320%2074L346%20100M340%2074L366%20100M360%2074L386%20100M380%2074L406%20100M400%2074L426%20100M420%2074L446%20100M440%2074L466%20100M460%2074L486%20100M480%2074L506%20100M500%2074L526%20100M520%2074L546%20100M540%2074L566%20100M560%2074L586%20100M580%2074L606%20100%22%2F%3E%20%3Cpath%20d%3D%22M30%2068V104M150%2068V104M270%2068V104M390%2068V104M510%2068V104%22%20stroke-width%3D%223.5%22%2F%3E%20%3C%2Fg%3E%20%3C!--%20concrete%20ground%20with%20joints%20--%3E%20%3Cpath%20d%3D%22M-10%20610H1610V910H-10Z%22%20fill%3D%22%23cfc9be%22%20stroke-width%3D%227%22%2F%3E%20%3Cpath%20d%3D%22M0%20720H1600M0%20820H1600M330%20610L270%20900M800%20610L800%20900M1270%20610L1330%20900%22%20stroke-width%3D%223%22%20stroke-opacity%3D%22.25%22%20fill%3D%22none%22%2F%3E%20%3C!--%20quarter%20pipe%20on%20the%20left%3A%20plywood%20face%2C%20steel%20coping%2C%20deck%20and%20rail%20--%3E%20%3Cg%20transform%3D%22translate(-537%20371)%20scale(2.4)%22%20stroke-width%3D%223%22%3E%20%3Cpath%20d%3D%22M232%20112Q322%20112%20328%2034H360V112Z%22%20fill%3D%22url(%23ramp)%22%2F%3E%20%3Cpath%20d%3D%22M360%2034H398V112H360Z%22%20fill%3D%22%23b37c34%22%2F%3E%20%3Cpath%20d%3D%22M328%2034H398%22%20stroke-width%3D%227%22%20stroke%3D%22%238d939b%22%2F%3E%20%3Cpath%20d%3D%22M328%2034H398%22%20stroke-width%3D%222%22%2F%3E%20%3Cpath%20d%3D%22M336%2034V14M390%2034V14M336%2014H390%22%20stroke-width%3D%224%22%20fill%3D%22none%22%2F%3E%20%3Cpath%20d%3D%22M258%20106Q312%20102%20320%2050%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-opacity%3D%22.45%22%20stroke-width%3D%224%22%2F%3E%20%3Ctext%20x%3D%22362%22%20y%3D%2282%22%20font-family%3D%22Consolas%2Cmonospace%22%20font-weight%3D%22bold%22%20font-size%3D%2217%22%20fill%3D%22%23ff2fb0%22%20stroke%3D%22%23141414%22%20stroke-width%3D%221.2%22%20transform%3D%22rotate(-8%20378%2076)%22%3ESK8%3C%2Ftext%3E%20%3C%2Fg%3E%20%3C!--%20bowl%20sunk%20into%20the%20ground%2C%20front%20left%2C%20with%20blue%20pool%20coping%20--%3E%20%3Cg%20transform%3D%22translate(296%20436)%20scale(2.4)%22%20stroke-width%3D%223%22%3E%20%3Cpath%20d%3D%22M14%20124Q14%20110%20110%20110Q206%20110%20206%20124Q206%20148%20110%20149Q14%20148%2014%20124Z%22%20fill%3D%22url(%23bowl)%22%2F%3E%20%3Cpath%20d%3D%22M30%20126Q34%20117%20110%20117Q186%20117%20190%20126Q184%20142%20110%20143Q36%20142%2030%20126Z%22%20fill%3D%22%23a39d93%22%20stroke-width%3D%222%22%2F%3E%20%3Cpath%20d%3D%22M14%20124Q14%20110%20110%20110Q206%20110%20206%20124%22%20fill%3D%22none%22%20stroke%3D%22%232d6cdf%22%20stroke-width%3D%227%22%2F%3E%20%3Cpath%20d%3D%22M14%20124Q14%20110%20110%20110Q206%20110%20206%20124%22%20fill%3D%22none%22%20stroke-width%3D%222.5%22%20stroke-dasharray%3D%222%2014%22%2F%3E%20%3C%2Fg%3E%20%3C!--%20stairs%20with%20a%20handrail%20on%20the%20right%20--%3E%20%3Cg%20transform%3D%22translate(146%20371)%20scale(2.4)%22%20stroke-width%3D%223%22%3E%20%3Cpath%20d%3D%22M478%2044H610V112H478Z%22%20fill%3D%22%23b9b3a8%22%2F%3E%20%3Cpath%20d%3D%22M478%2044H610V56H478Z%22%20fill%3D%22%23dfd9ce%22%2F%3E%20%3Cpath%20d%3D%22M460%2056H610V70H460Z%22%20fill%3D%22%23d2ccc1%22%2F%3E%20%3Cpath%20d%3D%22M442%2070H610V84H442Z%22%20fill%3D%22%23c6c0b5%22%2F%3E%20%3Cpath%20d%3D%22M424%2084H610V98H424Z%22%20fill%3D%22%23bbb5aa%22%2F%3E%20%3Cpath%20d%3D%22M406%2098H610V112H406Z%22%20fill%3D%22%23b0aa9f%22%2F%3E%20%3Cpath%20d%3D%22M414%2080L500%2018%22%20fill%3D%22none%22%20stroke-width%3D%226%22%20stroke%3D%22%23ffd21f%22%2F%3E%20%3Cpath%20d%3D%22M414%2080L500%2018%22%20fill%3D%22none%22%20stroke-width%3D%222%22%2F%3E%20%3Cpath%20d%3D%22M422%2074V100M452%2052V78M482%2031V52%22%20stroke-width%3D%224%22%2F%3E%20%3C%2Fg%3E%20%3C!--%20a%20grind%20rail%20and%20cones%20in%20the%20middle%20foreground%20--%3E%20%3Cpath%20d%3D%22M940%20760H1240%22%20stroke-width%3D%2216%22%20stroke%3D%22%23ff2fb0%22%2F%3E%3Cpath%20d%3D%22M940%20760H1240%22%20stroke-width%3D%226%22%2F%3E%20%3Cpath%20d%3D%22M970%20760V820M1210%20760V820%22%20stroke-width%3D%229%22%2F%3E%20%3Cg%20stroke-width%3D%226%22%3E%3Cpath%20d%3D%22M880%20840L898%20790L916%20840Z%22%20fill%3D%22%23ff8a1e%22%2F%3E%3Cpath%20d%3D%22M886%20822H910%22%20stroke%3D%22%23fff%22%20stroke-width%3D%225%22%2F%3E%3C%2Fg%3E%20%3Cg%20stroke-width%3D%226%22%3E%3Cpath%20d%3D%22M1290%20850L1308%20800L1326%20850Z%22%20fill%3D%22%23ff8a1e%22%2F%3E%3Cpath%20d%3D%22M1296%20832H1320%22%20stroke%3D%22%23fff%22%20stroke-width%3D%225%22%2F%3E%3C%2Fg%3E%20%3C%2Fg%3E%20%3Crect%20width%3D%221600%22%20height%3D%22900%22%20fill%3D%22%23140a2a%22%20opacity%3D%22.42%22%2F%3E%20%3C%2Fsvg%3E%20") center bottom/cover no-repeat}
 .slotbar{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 12px;background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,0))}
 .brand{font-family:var(--f-d);font-size:clamp(14px,3.2vw,22px);color:#fff;text-shadow:3px 3px 0 #000,-1px -1px 0 #000;letter-spacing:.04em}
 .barspacer{width:180px}
@@ -842,7 +842,7 @@ body.replay .ctrlbar,body.replay #menubtn,body.replay .spinwrap,body.replay #buy
 
 /* beach scene; sunset during bonuses */
 .slot .scene{background:#7fd6ff url("img/bg-day.webp?v=d919a75b") center bottom/cover no-repeat!important}
-.slot:has(.stage.bonus) .scene{background:#f58a5a url("img/bg-sunset.webp?v=4de74376") center bottom/cover no-repeat!important}
+.slot.h-bonus .scene{background:#f58a5a url("img/bg-sunset.webp?v=4de74376") center bottom/cover no-repeat!important}
 
 /* chrome in beach colours */
 .slotbar{background:linear-gradient(rgba(6,40,70,.55),rgba(6,40,70,0))}
@@ -991,7 +991,7 @@ img.mg.p-bail{animation:bail .9s ease-in forwards}
 .brand{font-size:clamp(20px,3.6vw,32px);pointer-events:none}
 /* a full-reel wild covers its cells, and pulses when it is part of a win */
 .stackov{z-index:5}
-.reel:has(.c.hit) .stackov .mstack img{animation:ride 2.2s ease-in-out infinite,wildwin .5s cubic-bezier(.2,1.7,.4,1)}
+.reel.h-hit .stackov .mstack img{animation:ride 2.2s ease-in-out infinite,wildwin .5s cubic-bezier(.2,1.7,.4,1)}
 @keyframes wildwin{0%{scale:1}50%{scale:1.15}100%{scale:1}}
 
 /* win walkthrough: one win at a time, its line and symbols lit, its math in a label at the end of the run */
@@ -1070,14 +1070,14 @@ img.mg.p-bail{animation:bail .9s ease-in forwards}
 #celebrate .celart img.msurf{width:100%;height:100%;display:block;filter:drop-shadow(0 10px 14px rgba(0,0,0,.35))}
 /* winning symbols grow, hop and lean; the reels normally clip to their box (for the spin strip), so while a win is
    on show they let the symbols spill over, and the winning cells sit above their neighbours (Oz: no cut-off) */
-.grid:has(.c.hit) .reel,.grid:has(.c.hit),.gridbox:has(.c.hit){overflow:visible!important}
+.grid.h-hit .reel,.grid.h-hit,.gridbox.h-hit{overflow:visible!important}
 .grid .c.hit{position:relative;z-index:3}
 .grid.focusing .c.focus{z-index:4}
-.grid:has(.c.hit) .reel:has(.c.hit){z-index:2}
+.grid.h-hit .reel.h-hit{z-index:2}
 /* ...and a reel with a win on show, or a wiggling badge, draws in front of the driftwood frame (z 40), so a pop or a hop
    at the board's edge passes over a plank instead of being cut by it. The big-win
    overlay and the win labels stay on top. During the chase the reel still dims itself (its own layer, below) */
-.grid .reel:has(> .c.hit),.grid .reel:has(> .c.tape),.grid .reel:has(> .stackov){z-index:41!important;transition-delay:0s!important}   /* at once (the chase-end delay is only for the fade) */
+.grid .reel.h-hit,.grid .reel.h-tape,.grid .reel.h-stk{z-index:41!important;transition-delay:0s!important}   /* at once (the chase-end delay is only for the fade) */
 #celebrate{z-index:46!important}
 .winpill,.mergetag{z-index:42!important}
 /* the big-win overlay fades in and out instead of cutting (display waits for the fade: allow-discrete) */
@@ -1098,20 +1098,20 @@ img.mg.p-bail{animation:bail .9s ease-in forwards}
 @keyframes carve{0%,100%{transform:translate(-50%,-10%) rotate(-10deg)}25%{transform:translate(-56%,-95%) rotate(-24deg)}45%{transform:translate(-44%,-115%) rotate(14deg)}
   70%{transform:translate(-50%,15%) rotate(18deg)}85%{transform:translate(-54%,5%) rotate(-4deg)}}
 @keyframes trail{0%,100%{transform:translate(-50%,40%) scaleX(.8);opacity:.6}25%{transform:translate(-55%,-60%) scaleX(1);opacity:.9}45%{transform:translate(-45%,-85%) scaleX(.6);opacity:.4}70%{transform:translate(-50%,70%) scaleX(1.1);opacity:.9}}
-.reel:has(.c.hit) .stackov .mstack.surf .mw-rider{animation:carve 1.6s ease-in-out infinite}
+.reel.h-hit .stackov .mstack.surf .mw-rider{animation:carve 1.6s ease-in-out infinite}
 /* soft motion: the wave breathes slowly and the mango rocks gently on it (no carving up and down the face); the trail rests */
 @media (prefers-reduced-motion:reduce){.mstack.surf .mw-wave{animation:wavebob 5s ease-in-out infinite}.mstack.surf .mw-trail{animation:none}
-  .mstack.surf .mw-rider,.reel:has(.c.hit) .stackov .mstack.surf .mw-rider{animation:carve-soft 4s ease-in-out infinite}
+  .mstack.surf .mw-rider,.reel.h-hit .stackov .mstack.surf .mw-rider{animation:carve-soft 4s ease-in-out infinite}
   @keyframes carve-soft{0%,100%{transform:translate(-50%,-10%) rotate(-4deg)}50%{transform:translate(-50%,-14%) rotate(4deg)}}}
-.reel:has(.c.hit) .stackov .mstack.surf .mw-wave{animation:wavebob 1.3s ease-in-out infinite}
-@media (prefers-reduced-motion:reduce){.reel:has(.c.hit) .stackov .mstack.surf .mw-wave{animation:wavebob 2.6s ease-in-out infinite}}
+.reel.h-hit .stackov .mstack.surf .mw-wave{animation:wavebob 1.3s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.reel.h-hit .stackov .mstack.surf .mw-wave{animation:wavebob 2.6s ease-in-out infinite}}
 /* ---------- wilds are never cut off (Oz) ---------- */
 /* a reel clips only while its spin strip is in it; once it lands, a wild's tag, the tower's splash and the rider can spill over */
-.grid .reel:not(:has(> .strip)){overflow:visible}
+.grid .reel:not(.h-strip){overflow:visible}
 /* a wild cell draws above its neighbours, so its tag overlaps them instead of tucking under */
-.grid .c:has(> .ms-W){z-index:3}
+.grid .c.h-w{z-index:3}
 /* the tower hides the cells under it (no sliver at its rounded corners or during the splash or a pop); they show while it grows or folds */
-.reel:has(> .stackov:not(.building)) > .c{visibility:hidden}
+.reel.h-stkb > .c{visibility:hidden}
 /* only the sea is clipped to the tower's rounded box (inside its 4px border); the rider leans past the sides uncut */
 .mstack.surf{overflow:visible}
 .mstack.surf .mw-sea{position:absolute;inset:0;overflow:hidden;border-radius:12px}
@@ -1175,7 +1175,7 @@ img.mg.p-bail{animation:bail .9s ease-in forwards}
   background:url("img/seaweed.svg?v=2af73010") center/contain no-repeat;transform:rotate(-8deg)}
 /* the big-win screen owns the board while it shows: win-line labels step back */
 /* hidden, not removed from layout, so a label made during the big win is measured and kept inside the board */
-.stage:has(#celebrate:not([hidden])) .winpill,body:has(#celebrate:not([hidden])) .winpill{visibility:hidden!important}
+body.h-cel .stage .winpill,body.h-cel .winpill{visibility:hidden!important}
 
 /* chase dim, one reel at a time: the game dims the board with one layer under the reels still spinning, so a reel that
    stopped dropped under it in a single frame. Every reel sits above that layer during the chase and dims itself, fading in
@@ -1231,10 +1231,10 @@ body.chase .machine .stage{transition-delay:0s}
 /* ---------- held wilds, quick stop, honest tease (2026-10-15) ---------- */
 /* a held wild (Swell sticky wild, Kahuna pin) sits on a solid sand tile while its reel spins: the strip runs behind the tile,
    never behind the see-through wild art (it used to look as if the new wilds dropped under the held one) */
-.grid .reel:has(> .strip) > .c:not(.spinning){z-index:4;background:linear-gradient(#f4e5c0,#ead5a6);border-radius:18%;
+.grid .reel.h-strip > .c:not(.spinning){z-index:4;background:linear-gradient(#f4e5c0,#ead5a6);border-radius:18%;
   box-shadow:inset 0 0 0 2px rgba(255,200,60,.85),0 0 0 2px rgba(122,74,34,.55),0 0 12px 2px rgba(255,190,60,.5)}
 /* a folding Kahuna tower fades over its pinned wild, which shows at once (the pin is the cell now, no overlay copy) */
-.reel:has(> .stackov.folding) > .c{visibility:visible}
+.reel.h-fold > .c{visibility:visible}
 /* winning cells: a higher row draws over a lower one, so a wild's tag (it hangs below the art) is never covered by the
    symbol under it when both pop; the spotlight stays on top of everything */
 .grid .reel > .c.hit:nth-child(1){z-index:7}.grid .reel > .c.hit:nth-child(2){z-index:6}.grid .reel > .c.hit:nth-child(3){z-index:5}.grid .reel > .c.hit:nth-child(4){z-index:4}
@@ -1281,12 +1281,12 @@ html.turbo .grid .c.tape.thump::before{animation-duration:.3s}
    strip (the round's padding), whatever it is (.pk.hot marks a wild or a badge); html.peeks-off fades them all out (.pk.cold).
    Rounds without padding (free spins, bought boards, books without it) show neutral filler there, never a wild or a badge. A soft shade toward the beams (.cyl) gives the drum its curve. */
 .machine .stage .grid{box-sizing:border-box;padding:var(--pgT,0px) 0 var(--pgB,0px)}
-.grid .reel:has(> .strip){overflow:visible;clip-path:inset(calc(-1 * var(--pkT,0px)) -40px calc(-1 * var(--pkB,0px)) -40px)}
+.grid .reel.h-strip{overflow:visible;clip-path:inset(calc(-1 * var(--pkT,0px)) -40px calc(-1 * var(--pkB,0px)) -40px)}
 .grid .reel::after{top:calc(-1 * var(--pkT,0px));bottom:calc(-1 * var(--pkB,0px))}
 .grid .reel > .pkw{position:absolute;left:0;right:0;z-index:1;overflow:hidden;pointer-events:none}
 .grid .reel > .pkw.up{bottom:100%;height:var(--pkT,0px)}
 .grid .reel > .pkw.dn{top:100%;height:var(--pkB,0px)}
-.grid .reel:has(> .strip) > .pkw{visibility:hidden}
+.grid .reel.h-strip > .pkw{visibility:hidden}
 .pkw > .pk{position:absolute;left:0;right:0;height:var(--ch,0px);line-height:0;opacity:1;transition:opacity .32s ease-out .06s}
 .pkw.up > .pk{bottom:var(--pg,0px);transform:scaleY(var(--pkk,1));transform-origin:50% 100%}
 .pkw.dn > .pk{top:var(--pg,0px);transform:scaleY(var(--pkk,1));transform-origin:50% 0}
@@ -2091,9 +2091,9 @@ html.turbo .grid .c.tape.thump::before{animation-duration:.3s}
 .sc-world{position:absolute;left:0;top:0;width:2000px;height:1125px;transform-origin:0 0}
 .sc-plate{position:absolute;inset:0;width:2000px;height:1125px;display:block;transition:opacity 1.2s}
 .sc-plate.sunset{opacity:0}
-.slot:has(.stage.bonus) .sc-plate.sunset{opacity:1}
+.slot.h-bonus .sc-plate.sunset{opacity:1}
 /* at sunset the moving pieces take the warm light too */
-.slot:has(.stage.bonus) .sc-palm img,.slot:has(.stage.bonus) .sc-crab img,.slot:has(.stage.bonus) .sc-sea img{filter:sepia(.35) saturate(1.25) hue-rotate(-12deg) brightness(.92)}
+.slot.h-bonus .sc-palm img,.slot.h-bonus .sc-crab img,.slot.h-bonus .sc-sea img{filter:sepia(.35) saturate(1.25) hue-rotate(-12deg) brightness(.92)}
 
 /* palms: the trunk stands still, the crown of leaves rocks in the wind from the top of the trunk */
 .sc-palm{position:absolute}
@@ -2119,8 +2119,8 @@ html.turbo .grid .c.tape.thump::before{animation-duration:.3s}
 @keyframes wash{0%,100%{transform:scaleY(1)}45%{transform:translateX(-4px) scaleY(1.085)}60%{transform:translateX(-2px) scaleY(1.07)}}
 @keyframes ripple{0%,100%{transform:translate(-14px,2px) scaleY(1.01);opacity:0}50%{transform:translate(14px,5px) scaleY(1.04);opacity:.35}}
 .sc-water.sunset{opacity:0}
-.slot:has(.stage.bonus) .sc-water.sunset{opacity:1}
-.slot:has(.stage.bonus) .sc-water.day{opacity:0}
+.slot.h-bonus .sc-water.sunset{opacity:1}
+.slot.h-bonus .sc-water.day{opacity:0}
 
 /* the sea band: anything below the surface line is hidden, so creatures rise out of and dive back into the water */
 .sc-sea{position:absolute;overflow:hidden}
@@ -2146,12 +2146,12 @@ html.turbo .grid .c.tape.thump::before{animation-duration:.3s}
    stands behind its leaves, as in the painting */
 .sc-bush{position:absolute;left:0;top:640px;width:900px;height:485px;transition:opacity 1.2s;pointer-events:none}
 .sc-bush.sunset{opacity:0}
-.slot:has(.stage.bonus) .sc-bush.sunset{opacity:1}
-.slot:has(.stage.bonus) .sc-bush.day{opacity:0}
+.slot.h-bonus .sc-bush.sunset{opacity:1}
+.slot.h-bonus .sc-bush.day{opacity:0}
 .sc-chair{position:absolute;left:1370px;top:540px;width:330px;height:370px;transition:opacity 1.2s;pointer-events:none}
 .sc-chair.sunset{opacity:0}
-.slot:has(.stage.bonus) .sc-chair.sunset{opacity:1}
-.slot:has(.stage.bonus) .sc-chair.day{opacity:0}
+.slot.h-bonus .sc-chair.sunset{opacity:1}
+.slot.h-bonus .sc-chair.day{opacity:0}
 /* Safari draws a blended layer over things that should cover it, so the second water layer is a plain fade (no blend
    mode) and every scene layer has an explicit order: water, sea creatures, palms, chair, bush */
 .sc-water .wv.b{mix-blend-mode:normal!important}
@@ -2162,7 +2162,7 @@ html.turbo .grid .c.tape.thump::before{animation-duration:.3s}
 .sc-water{will-change:transform;transform:translateZ(0)}
 /* the bonus sunset under a live beach: the sunset plate covers the scene, so the old full-scene bg-sunset.webp is never
    fetched (load speed); the colour shows only while the plate itself loads */
-.slot:has(.stage.bonus) .scene.live{background:#f58a5a!important}
+.slot.h-bonus .scene.live{background:#f58a5a!important}
 
 /* ---------- layout fixes per screen shape (loaded last, so these win) ---------- */
 
@@ -2840,7 +2840,7 @@ html body .mhud #spinbtn[data-ml]::after{content:attr(data-ml)!important;display
 /* layering: like BONUS BUY, under the bonus intro / MAX WIN card (body.cine-top) and gone while the big-win card is up */
 body.cine-top #bbcard,body.cine-top #modechip{z-index:41!important}
 #bbcard{transition:opacity .3s,filter .25s,box-shadow .25s}#modechip{transition:opacity .3s}
-body:has(#celebrate:not([hidden])) #bbcard,body:has(#celebrate:not([hidden])) #modechip{opacity:0;pointer-events:none}
+body.h-cel #bbcard,body.h-cel #modechip{opacity:0;pointer-events:none}
 body.replay #bbcard,body.replay #modechip{display:none!important}
 /* no bonus buy while Bonus Boost is on: the bonus cards grey out and say why; a tap nudges the Boost card */
 #buys .wc.wc-boostlock{filter:grayscale(.85) brightness(.72);cursor:not-allowed}
@@ -4696,23 +4696,28 @@ body.replay #bbcard,body.replay #modechip{display:none!important}
   const n = (cls, k) => Array.from({length: k}, (_, i) => `<i class="${cls} p${i + 1}"></i>`).join('');
   const img = (src, k, cls) => `<img class="${cls}" src="${src(k)}" alt="" draggable="false" decoding="sync">`;
   const WATER = {L1: 1, L2: 1, L3: 1, L4: 1, L5: 1, W: 1}, SHINE = {L1: 1, L2: 1, L3: 1, L4: 1, L5: 1, H2: 1, H4: 1, S1: 1};
+  // (smooth pass 2) the layers only a win shows (the flash, the ball's shadow, milk, foam, drips, the badge's 3rd and 4th
+  // sparkle) sit at zero opacity until then: a cell is drawn without them and dress() adds them, in the same places and
+  // order, the moment the symbol joins a win (sync / win). Fewer elements to build and style at every landing
+  const WIN_BACK = {H2: '<i class="fx-shd"></i>'};
+  const WIN_FRONT = {W: () => n('fx-foam', 5), S1: () => '<i class="fx-spk p3"></i><i class="fx-spk p4"></i>', H1: () => n('fx-milk', 4), H4: () => n('fx-drp', 3)};
   function inner(k, src){
-    let back = '<i class="fx-flash"></i>', body = '', front = '';
+    let back = '', body = '', front = '';
     body = k === 'H3' ? img(src, 'H3-body', 'h3-body') + img(src, 'H3-leaf', 'h3-leaf') : img(src, k, 'base');
     if (WATER[k]) body += '<i class="fx-water"><i></i></i>';
     if (SHINE[k]) body += '<i class="fx-shine"><i></i></i>';
-    if (k === 'W'){ back += '<i class="fx-glow"></i>'; front = '<i class="fx-spk"></i>' + n('fx-foam', 5); }
-    if (k === 'S1'){ back += '<i class="fx-rays"></i>'; front = n('fx-spk', 4); }
+    if (k === 'W'){ back += '<i class="fx-glow"></i>'; front = '<i class="fx-spk"></i>'; }
+    if (k === 'S1'){ back += '<i class="fx-rays"></i>'; front = '<i class="fx-spk p1"></i><i class="fx-spk p2"></i>'; }
     if (k === 'H3') front = '<i class="fx-spk"></i>';
-    if (k === 'H1') front = n('fx-milk', 4);
-    if (k === 'H2') back += '<i class="fx-shd"></i>';
-    if (k === 'H4') front = n('fx-drp', 3);
     return `<span class="fx" aria-hidden="true"><span class="fx-bk">${back}</span><span class="fx-sq"><span class="fx-pop"><span class="fx-mv">${body}${front}</span></span></span></span>`;
   }
+  const dress1 = ms => { if (ms._fxw) return; const k = (/\bms-([A-Za-z0-9]+)/.exec(ms.className) || [])[1], bk = ms.querySelector('.fx-bk'), mv = ms.querySelector('.fx-mv');
+    if (!k || !bk || !mv) return; ms._fxw = 1; bk.insertAdjacentHTML('afterbegin', '<i class="fx-flash"></i>' + (WIN_BACK[k] || '')); if (WIN_FRONT[k]) mv.insertAdjacentHTML('beforeend', WIN_FRONT[k]()); };
+  const dress = el => { if (!el) return; if (el.classList && el.classList.contains('ms')) dress1(el); else if (el.querySelectorAll) el.querySelectorAll('.ms').forEach(dress1); };
   // the shared beat: every winner pulses on one clock. A symbol that joins waits for the next beat boundary (the beat
   // starts and ends at rest, so it never jumps): --fxws is that wait, --fxws2 the wait for the two-beat part motion (the
   // next even beat, so its loops line up with everyone else's)
-  const sync = el => { if (!el) return; const now = performance.now(), t1 = Math.ceil(now / BEAT) * BEAT, d = t1 - now;
+  const sync = el => { if (!el) return; dress(el); const now = performance.now(), t1 = Math.ceil(now / BEAT) * BEAT, d = t1 - now;
     el.style.setProperty('--fxws', d.toFixed(0) + 'ms'); el.style.setProperty('--fxws2', (d + (Math.round(t1 / BEAT) % 2 ? BEAT : 0)).toFixed(0) + 'ms'); };
   function win(ms, on){ if (!ms) return; if (on){ sync(ms); ms.classList.add('win'); } else ms.classList.remove('win'); }
   // the water shimmer (two small pictures) switches on once the page has loaded, so it never delays the first paint; with
@@ -4720,7 +4725,7 @@ body.replay #bbcard,body.replay #modechip{display:none!important}
   const on = () => document.documentElement.classList.add('fx-live'), live = () => setTimeout(on, 800);
   if (document.readyState === 'complete') live(); else addEventListener('load', live);
   addEventListener('mango:shown', on);
-  window.MangoSymFX = {inner, win, sync, BEAT};
+  window.MangoSymFX = {inner, win, sync, dress, BEAT};
 })();
 
 </script>
@@ -4824,9 +4829,18 @@ body.replay #bbcard,body.replay #modechip{display:none!important}
     const g = document.querySelector('.grid'); if (g) g.classList.remove('focusing');
     document.querySelectorAll('#lineov .wl.off').forEach(p => p.classList.remove('off')); }
   let CAPK = 0;
+  // (smooth pass 2) the stage's box and every cell's box, measured once per round's lines (the game's own line drawing
+  // measures them; lineGeo keeps that), so the walk's labels never force the page's layout again. Positions are in the
+  // stage's own pixels (a camera punch scales the box: its scale is taken out)
+  // (fresh: measured by the game for this round's lines; afterLines takes it once, and a later round measures again)
+  let GEO = null; addEventListener('resize', () => { GEO = null; });
+  function lineGeo(stage, sb, els, rects, own){ const m = new Map(); els.forEach((c, i) => m.set(c, rects[i])); GEO = {stage, sb, m, z: stage.offsetWidth ? sb.width / stage.offsetWidth : 1, fresh: !own}; }
+  function geo(){ if (GEO && GEO.stage.isConnected) return GEO; const stage = document.querySelector('.grid').parentElement, els = Array.from(document.querySelectorAll('.grid .c'));
+    lineGeo(stage, stage.getBoundingClientRect(), els, els.map(c => c.getBoundingClientRect()), true); return GEO; }
+  const cellBox = c => (GEO && GEO.m.get(c)) || c.getBoundingClientRect();
   function pill(w, color){
-    const stage = document.querySelector('.grid').parentElement, sb = stage.getBoundingClientRect();
-    const ln = TT.LINES[w.li], b = cellAt(w.k-1, ln[w.k-1]).getBoundingClientRect(), bet = BET;
+    const G = geo(), stage = G.stage, sb = G.sb, z = G.z || 1;
+    const ln = TT.LINES[w.li], b = cellBox(cellAt(w.k-1, ln[w.k-1])), bet = BET;
     // v3.0 Rising Tide: the line's multiplier is its wilds' total + the Tide, shown as "x3 + Tide x2 = x5"
     const tm = w.tide > 0 ? (w.mult > w.tide ? `<span class="mp-tide">x${num(w.mult - w.tide)} <i>+</i> Tide x${num(w.tide)} <i>=</i> x${num(w.mult)}</span>` : `<span class="mp-tide">Tide x${num(w.tide)}</span>`) : '';
     // (2026-10-29) a clean label: the line's badge and what it paid, no sum. A multiplied line keeps one small tag with its
@@ -4835,11 +4849,15 @@ body.replay #bbcard,body.replay #modechip{display:none!important}
     const tag = CAPK ? '<span class="mp-cnt">MAX WIN</span>' : tm || (w.mult > 1 ? `<span class="mp-cnt">x${num(w.mult)}</span>` : '');
     const el = document.createElement('div'); el.className = 'winpill'; el.style.setProperty('--lc', color || '#ffd23f');
     el.innerHTML = `<span class="mp-ln">LINE ${w.li+1}</span><span class="mp-mth"><b>${money(amt)}</b></span>${tag}`;
-    stage.appendChild(el);
     // above the last symbol of the run, kept inside the machine
-    const x = b.left - sb.left + b.width/2, y = b.top - sb.top + b.height*0.12, half = el.offsetWidth/2;
-    // clear of the frame: its planks lap 8px over the machine's edge
-    el.style.left = Math.max(half + 10, Math.min(sb.width - half - 10, x)) + 'px'; el.style.top = Math.max(el.offsetHeight + 10, y) + 'px';
+    const x = (b.left - sb.left + b.width/2)/z, y = (b.top - sb.top + b.height*0.12)/z, sw = sb.width/z;
+    el.style.left = x + 'px'; el.style.top = y + 'px';
+    stage.appendChild(el);
+    // clear of the frame: its planks lap 8px over the machine's edge. The label's own size is read at the start of the next
+    // frame (the page is laid out once there anyway), not right after it was added (that forced a second and third layout);
+    // the frame it first shows in already has it in place
+    requestAnimationFrame(() => { if (!el.isConnected) return; const half = el.offsetWidth/2, L = Math.max(half + 10, Math.min(sw - half - 10, x)), T = Math.max(el.offsetHeight + 10, y);
+      if (L !== x) el.style.left = L + 'px'; if (T !== y) el.style.top = T + 'px'; });
   }
   function show(wins, i, colors){
     const svg = document.getElementById('lineov'), grid = document.querySelector('.grid');
@@ -4878,7 +4896,7 @@ body.replay #bbcard,body.replay #modechip{display:none!important}
     walkTimer = setTimeout(step, tb ? 380 : 700);   // after the first pop of every winning symbol
   }
   function afterLines(wins, bet, fmt, paid){
-    if (bet) BET = bet; if (fmt) FMT = fmt;
+    if (bet) BET = bet; if (fmt) FMT = fmt; if (GEO && !GEO.fresh) GEO = null; if (GEO) GEO.fresh = false;
     // a capped round (max win): the lines' own pays add up to more than was paid. Labels never show more than the round
     // paid: each line shows its share of the paid amount (rounded down to the cent) with a MAX WIN tag instead
     { const tot = (wins || []).reduce((a, w) => a + (w.win || 0), 0); CAPK = paid != null && tot > 0 && paid < tot - 1e-9 ? Math.max(0, paid) / tot : 0; }
@@ -4900,8 +4918,8 @@ body.replay #bbcard,body.replay #modechip{display:none!important}
     try { walkWins(wins, colors); } catch(e){}
     { const g = document.querySelector('.grid'); if (g && document.querySelector('.grid .c.hit')) g.classList.add('wins'); }   // the symbols that did not win step back (smooth.css)
     const hits = document.querySelectorAll('.grid .c.hit'); if (!hits.length) return;
-    const stage = document.querySelector('.grid').parentElement, sb = stage.getBoundingClientRect();
-    const nd = hits.length > 8 ? 4 : 7, hb = Array.from(hits, c => c.getBoundingClientRect());   // all reads first, then the writes
+    const G = geo(), stage = G.stage, sb = G.sb;
+    const nd = hits.length > 8 ? 4 : 7, hb = Array.from(hits, cellBox);   // all reads first (the line drawing's own), then the writes
     if (window.MangoCine && MangoCine.splashCells){ MangoCine.splashCells(hb, nd); return; }   // smooth-anim: canvas particles, not DOM drops
     hits.forEach((c, n) => { const b = hb[n], box = document.createElement('div'); box.className = 'splash';
       box.style.left = (b.left - sb.left + b.width/2) + 'px'; box.style.top = (b.top - sb.top + b.height/2) + 'px'; box.style.animationDelay = (n*0.03) + 's';
@@ -5306,7 +5324,7 @@ body.replay #bbcard,body.replay #modechip{display:none!important}
   // each cell's idle loop starts after its own short wait (sym-fx.css --i), so the board breathes instead of pulsing
   function cellPhase(){ document.querySelectorAll('.grid .c').forEach((c, i) => c.style.setProperty('--i', (i*3) % 10)); }
 
-  window.MangoSkin = {stack, afterLines, game, scene(){},
+  window.MangoSkin = {stack, afterLines, lineGeo, game, scene(){},
     init(){ try { words(); } catch(e){} try { rain(); } catch(e){} try { watchLines(); } catch(e){} try { coconuts(); } catch(e){} try { hud(); } catch(e){} try { buySheet(); } catch(e){} try { drawerSkin(); } catch(e){} try { infoSettings(); } catch(e){} try { confirmSkin(); } catch(e){} try { liveScene(); } catch(e){} try { frameCrabs(); } catch(e){} try { totalOnly(); } catch(e){} try { betPicker(); } catch(e){} try { cellPhase(); } catch(e){} }};
   document.addEventListener('DOMContentLoaded', () => window.MangoSkin.init());
 })();
@@ -6154,7 +6172,7 @@ function drawLines_sk8(wins, ramps){ drawLines_base(wins, ramps); }
 function drawLines_base(wins, ramps){
   const svg = $('lineov'); svg.innerHTML = ''; cells.forEach(c=>c.classList.remove('hit'));
   const gb = gridEl.getBoundingClientRect(); svg.setAttribute('viewBox', `0 0 ${Math.max(1,gb.width)} ${Math.max(1,gb.height)}`);
-  const cr = cells.map(c => c.getBoundingClientRect());
+  const cr = cells.map(c => c.getBoundingClientRect()); try { MangoSkin.lineGeo(gridEl.parentElement, gridEl.parentElement.getBoundingClientRect(), cells, cr); } catch(e){}
   const ctr = (r,row) => { const b = cr[TT.cell(r,row)]; return [b.left-gb.left+b.width/2, b.top-gb.top+b.height/2]; };
   wins.forEach(w=>{ const ln = TT.LINES[w.li];
     const pl = document.createElementNS('http://www.w3.org/2000/svg','polyline'); // draw only through the winning symbols (the first w.k reels), not across the whole board
@@ -6334,6 +6352,13 @@ function preSoon(){ if (preBuilt || preIdle || GLR()) return; preIdle = (window.
 // smooth-anim step 2: with the WebGL reels ready (reels-gl.js, MangoReelsGL) the strips are drawn on one canvas. Same
 // strip, same items, same motion: only the drawing differs (see reels-gl.js). Without it, the DOM strips below, unchanged.
 const GLR = () => !!(window.MangoReelsGL && MangoReelsGL.ready());
+// (smooth pass 2) the WebGL reels are up: the parked DOM strips (about 1,500 hidden elements the page restyled with the
+// board) are not needed any more; they go now, at idle, not on the first tap
+addEventListener('mango:gl', () => { if (!preSpin) preDrop(); });
+// (smooth pass 2) while the reels spin, every symbol's idle loop holds where it is (#grid.sm-calm, smooth.css): a running CSS
+// animation costs a style update on the page's thread every frame, a held one costs nothing. On from the tap (or spinAnim's
+// start) until the last reel lands; a landed cell's loops start at rest when the board lets go (sym-fx.css), so nothing jumps
+function calm(on){ gridEl.classList.toggle('sm-calm', !!on); }
 function preSpinStartGL(){
   const cellH = RL.ch, pitch = cellH + RL.gap, turbo = speed === 1;
   if (!MangoReelsGL.begin(cellH, pitch)) return false;
@@ -6348,7 +6373,7 @@ function preSpinStartGL(){
     items.push(pkEls[r][1].classList.contains('cold') ? '' : pkEls[r][1].innerHTML);
     const st = MangoReelsGL.strip(r, items); st.glAttach(col);
     const o = {st, nFill, N}; o.y0 = o.y = -(N-ROWS-2)*pitch; st.style.transform = `translateY(${o.y.toFixed(1)}px)`; return o; });
-  cells.forEach(c => c.classList.add('spinning'));
+  cells.forEach(c => c.classList.add('spinning')); calm(true);
   sfx('spinStart'); mascot('ollie');
   // reel feel: a short wind-up (the reels pull back a little, then go), staggered left to right; none in turbo
   const t0 = performance.now(), v = pitch/T(24), WU = turbo ? 0 : T(150), WS = turbo ? 0 : T(28), pull = .14*pitch; let raf = 0, alive = true, fresh = false;
@@ -6362,9 +6387,9 @@ function preSpinStartGL(){
   slam.on = true; slam.req = false; slam.tease = false; slamUI();
   const stop = () => { alive = false; cancelAnimationFrame(raf); preSpin = null; };
   preSpin = {gl: true, age: () => performance.now() - t0,
-    take(release){ stop(); if (release){ strips.forEach(o => o.st.remove()); cells.forEach(c => c.classList.remove('spinning')); slam.on = false; slam.req = false; slamUI(); } return this; },
+    take(release){ stop(); if (release){ strips.forEach(o => o.st.remove()); cells.forEach(c => c.classList.remove('spinning')); calm(false); slam.on = false; slam.req = false; slamUI(); } return this; },
     strip: r => strips[r],
-    cancel(){ stop(); strips.forEach(o => o.st.remove()); cells.forEach(c => c.classList.remove('spinning')); slam.on = false; slam.req = false; slamUI(); }};
+    cancel(){ stop(); strips.forEach(o => o.st.remove()); cells.forEach(c => c.classList.remove('spinning')); calm(false); slam.on = false; slam.req = false; slamUI(); }};
   return true;
 }
 function preSpinStart(){
@@ -6385,7 +6410,7 @@ function preSpinStart(){
     move(pkEls[r][1], kids[N-1], pkEls[r][1].classList.contains('cold'));
     o.y0 = o.y = -(N-ROWS-2)*pitch; o.st.style.transform = `translateY(${o.y.toFixed(1)}px)`; pkCyl(o.st, o.y, pitch, cellH);
     o.st.className = 'strip blur'; return o; });
-  cells.forEach(c => c.classList.add('spinning'));
+  cells.forEach(c => c.classList.add('spinning')); calm(true);
   sfx('spinStart'); mascot('ollie');
   // filler runs past at one row per 24 ms; it never reaches the result rows at the top: 8 rows short of them it loops back
   const t0 = performance.now(), v = pitch/T(24); let raf = 0, alive = true, fresh = false;
@@ -6400,10 +6425,10 @@ function preSpinStart(){
   preSpin = {age: () => performance.now() - t0,
     // spinAnim takes over in the same task (no frame in between) and keeps the strips (strip(r): the strip, its filler count
     // and where it is now); release = it will not draw strips (fast): they go
-    take(release){ stop(); if (release){ strips.forEach(o => o.st.remove()); cells.forEach(c => c.classList.remove('spinning')); slam.on = false; slam.req = false; slamUI(); } return this; },
+    take(release){ stop(); if (release){ strips.forEach(o => o.st.remove()); cells.forEach(c => c.classList.remove('spinning')); calm(false); slam.on = false; slam.req = false; slamUI(); } return this; },
     strip: r => strips[r],
     // the bet request failed: the filler fades and the last board shows again, untouched
-    cancel(){ stop(); strips.forEach(o => (o.back || []).forEach(([from, nodes]) => from.replaceChildren(...nodes))); cells.forEach(c => c.classList.remove('spinning'));
+    cancel(){ stop(); strips.forEach(o => (o.back || []).forEach(([from, nodes]) => from.replaceChildren(...nodes))); cells.forEach(c => c.classList.remove('spinning')); calm(false);
       strips.forEach(o => { o.st.style.transition = 'opacity .18s ease-out'; o.st.style.opacity = '0'; setTimeout(() => o.st.remove(), 200); });
       slam.on = false; slam.req = false; slamUI(); preSoon(); }};
 }
@@ -6490,10 +6515,10 @@ async function spinAnim(g, mults, sticky, fast, isBonus, opt){
   cells.forEach(c=>c.classList.remove('hit')); $('lineov').innerHTML = '';
   const dg = g.slice(), dm = mults.slice();
   merged.forEach(mg=>{ if (mg.upgrade && !mg.anchor) return; for (let row=0;row<ROWS;row++){ const c = TT.cell(mg.r,row), f = mg.from.find(x=>x.c===c); dg[c] = f ? W : mg.raw[row]; dm[c] = f ? f.m : mg.anchor && mg.anchor.c === c ? mg.anchor.m : 0; } });
-  if (fast || speed === 2){ if (speed === 2 && !fast) mascot('ollie'); document.querySelectorAll('.pinov').forEach(o=>o.remove());
+  if (fast || speed === 2){ calm(false); if (speed === 2 && !fast) mascot('ollie'); document.querySelectorAll('.pinov').forEach(o=>o.remove());
     // last spin's wild stacks go (the animated path drops them as each reel starts); held reels are redrawn from merged below
     reelEls.forEach((el, r) => { if (!hold[r]){ const o = el.querySelector('.stackov'); if (o) o.remove(); } }); for (let c=0;c<CELLS;c++){ if (hold[Math.floor(c/ROWS)]) continue; paintCell(c, dg[c], dm[c], sticky && sticky[c] > 0); } for (let r=0;r<REELS;r++) if (!hold[r]){ pkSet(r, 0, pkSym(pad, r, 0)); pkSet(r, 1, pkSym(pad, r, 1)); } merged.forEach(mg=>setStack(mg.r, mg.M, !!opt.lock)); return false; }
-  if (!pre){ if (!isBonus) sfx('spinStart'); mascot('ollie'); }
+  calm(true); if (!pre){ if (!isBonus) sfx('spinStart'); mascot('ollie'); }
   // anticipation: two tapes of a kind down means the later reels spin longer (the outcome is already fixed).
   // The rising tape chime only starts at the 2nd tape of a kind; the first one lands quietly.
   let a1 = 0, a2 = 0, antFrom = -1, antLegend = false;
@@ -6549,7 +6574,7 @@ async function spinAnim(g, mults, sticky, fast, isBonus, opt){
       } else all = false; });
     if (antOn){ let f = false; reelEls.forEach(el => { const on = !f && el.classList.contains('tease'); if (on) f = true; el.classList.toggle('next', on); }); }
     if (all){ slam.on = false; slam.req = false; slam.tease = false; slamUI(); if (antOn) sfx('anticipation', false); document.body.classList.remove('chase'); reelEls.forEach(el => el.classList.remove('next'));
-      done(); preSoon(); } else requestAnimationFrame(frame); }; requestAnimationFrame(frame); });
+      calm(false); done(); preSoon(); } else requestAnimationFrame(frame); }; requestAnimationFrame(frame); });
   if (merged.length) await mergeAnim(merged, false, !!opt.lock);
   return antOn;
 }
@@ -6604,7 +6629,7 @@ async function plainCount(amount, title, dur){
 const bigHitTitle = x => { const top = LADDER.filter(([th]) => x >= th).pop(); return top ? top[1] : 'BIG HIT'; };
 function resetWinBoxes(){ $('totalbox').hidden = true; }
 // end of a round: bonuses always count their total up; the trick ladder (vs your bet) only when the bonus paid more than it cost
-async function finishRound(res, win, cost){ if (window.MangoTiers) return v3featFinish(res, win, cost);
+async function finishRound(res, win, cost){ calm(false); if (window.MangoTiers) return v3featFinish(res, win, cost);
   if (res && res.bonus && win > 0){
     const x = win/roundBet;
     if (win >= cost && LADDER.some(([th]) => x >= th) && speed !== 2) return celebrate(x, win, roundBet, 'YOUR BET');
@@ -6674,7 +6699,9 @@ async function v3BigWave(waves){
     const tag = v3tag(mg, factors);
     sfx('wildExpand', mg.M, mg.r);
     await growStack(mg.r, mg.M, false, [ROWS-1, ROWS-1]);
-    gridEl.classList.remove('shake'); void gridEl.offsetWidth; gridEl.classList.add('shake');
+    // (smooth pass 2) the board shake is off in this skin (skin.css .grid.shake{animation:none!important}; the camera shakes
+    // the reel box instead), so the class is set without the forced reflow that restarted it
+    gridEl.classList.add('shake');
     await wait(T(320)); tag.classList.add('out'); setTimeout(() => tag.remove(), 240); lit.forEach(c => cells[c].classList.remove('hit'));
   }));
   const best = Math.max(...waves.map(w => w.M));
@@ -7410,7 +7437,7 @@ img[src*="fx-rays"]{-webkit-mask-image:radial-gradient(circle at 50% 50%,#000 30
 @media (max-width:600px){#celebrate .cine-card{width:min(78%,320px)}}
 
 #buybtn{transition:opacity .3s}
-body:has(#celebrate:not([hidden])) #buybtn{opacity:0;pointer-events:none}
+body.h-cel #buybtn{opacity:0;pointer-events:none}
 @media (prefers-reduced-motion:reduce){.cine-hero .cc-sun,.cine-hero .cc-glit,.cine-hero .cc-foam{animation:none}}
 
 #celebrate img.rain{display:none!important}
@@ -7510,6 +7537,7 @@ body.cine-intro .bonusgo .bg-k{white-space:nowrap;font:400 clamp(12px,1.5vw,16px
     for (i = 0; i < cs.length; i++) RC.cells.push(box(cs[i].getBoundingClientRect(), s));
     var sb = $('spinbtn'); RC.spin = sb ? box(sb.getBoundingClientRect(), s) : null;
     var g = $('grid'); RC.grid = g ? box(g.getBoundingClientRect(), s) : null;
+    RC.s = { left: s.left, top: s.top, w: innerWidth, h: innerHeight };
     RC.at = performance.now();
   }
   function fresh() { if (!RC.cells.length) cache(); }
@@ -8245,7 +8273,9 @@ body.cine-intro .bonusgo .bg-k{white-space:nowrap;font:400 clamp(12px,1.5vw,16px
   // smooth-anim: the water splash out of each winning cell, drawn as particles on the canvas (it was ~7 DOM drops per cell,
   // each its own animated layer). rects: the cells' getBoundingClientRect() boxes, read by the caller in one go
   M.splashCells = function (rects, n) {
-    if (!slot || !rects || !rects.length) return; var s = slot.getBoundingClientRect();
+    // (smooth pass 2) the slot is fixed to the viewport: its offset comes from the last measure while the viewport is the
+    // same size (reading it here, right after the win lines went in, forced a full layout)
+    if (!slot || !rects || !rects.length) return; var s = RC.s && RC.s.w === innerWidth && RC.s.h === innerHeight ? RC.s : slot.getBoundingClientRect();
     rects.forEach(function (b, i) { var x = b.left - s.left + b.width / 2, y = b.top - s.top + b.height / 2;
       setTimeout(function () { water(x, y, (n || 7) + 3, { ang: -Math.PI / 2, spread: TAU, speed: b.width * 2.6, size: 3.4, g: 900 }); }, i * 30); });
   };
@@ -8278,7 +8308,7 @@ body.cine-intro .bonusgo .bg-k{white-space:nowrap;font:400 clamp(12px,1.5vw,16px
   var IV = window.MANGO_IMG_V || {}, badge = 'img/S1.webp' + (IV.S1 ? '?v=' + IV.S1 : '');
   var NAME = {SPECIAL1: 'RIPPLE', SPECIAL2: 'CURL', SPECIAL3: 'BARREL'};
   var G = function () { try { return window.MangoMode ? MangoMode.get() : null; } catch (e) { return null; } };
-  var card, chip, wrap, lastKey = '', q = 0, again = 0, retry = 0;
+  var card, chip, wrap, lastKey = '', lastPlace = '', q = 0, again = 0, retry = 0;
 
   function ratio() {
     try { var x = MangoMode.ratio(); if (!(x > 0)) return 0; var r = Math.round(x * 2) / 2; return r > 1 ? r : 0; } catch (e) { return 0; }
@@ -8333,7 +8363,10 @@ body.cine-intro .bonusgo .bg-k{white-space:nowrap;font:400 clamp(12px,1.5vw,16px
         chip.setAttribute('aria-label', nm.charAt(0) + nm.slice(1).toLowerCase() + ' spins on, ' + priceOf(g.mode) + '.bb-per spin. Tap to go back to normal spins'); }
       if (sb){ if (nm) sb.dataset.ml = nm; else delete sb.dataset.ml; }
       // placed now and again a moment later (panels closing and the bar settling can still move things in the first frames)
-      soon(); clearTimeout(again); again = setTimeout(soon, 380);
+      // (smooth pass 2) only when something that can move or resize them changed: the lock alone (every round's start and end)
+      // only greys them, and placing reads the whole page's layout (a forced layout on the slowed phone at every landing)
+      var pk = [on, sp, r, per, hasAnte, g.mode].join('|');
+      if (pk !== lastPlace){ lastPlace = pk; soon(); clearTimeout(again); again = setTimeout(soon, 380); }
     }
   }
 
@@ -8507,7 +8540,7 @@ body.v3-kahuna .stage .gridbox,body.v3-kahuna .stage #grid{box-shadow:0 0 34px r
 @keyframes v3sayin{from{transform:translate(-50%,-50%) scale(.4);opacity:0}to{transform:translate(-50%,-50%);opacity:1}}
 @keyframes v3sayout{to{transform:translate(-50%,-70%) scale(.9);opacity:0}}
 @media (prefers-reduced-motion:reduce){.v3say,.v3say.out{animation-duration:.01s}}
-.grid .reel:has(> .stackov.v3walk){overflow:visible!important;clip-path:none!important}
+.grid .reel.h-walk{overflow:visible!important;clip-path:none!important}
 .stackov.v3walk{will-change:transform;z-index:7}
 /* buy cards: the max win stays readable where the compact cards hide their text */
 .sheet.mbuy .wc-desc .wc-max{font-weight:800;color:#ffd23f}
@@ -9216,6 +9249,7 @@ const drop = (...ns) => ns.forEach(x => (x && x._all ? x._all : [x]).forEach(y =
     var idle = function(){ return new Promise(function(r){ (window.requestIdleCallback || setTimeout)(r, {timeout: 1000}); }); };
     await idle(); await atlas(); await idle(); warmDraw();
     ok = true;
+    try { dispatchEvent(new Event('mango:gl')); } catch(e){}
     var rz = 0; addEventListener('resize', function(){ clearTimeout(rz); rz = setTimeout(function(){ if (ok && !strips.length) atlas().then(warmDraw, function(){}); }, 250); });
   }
 
@@ -9402,8 +9436,80 @@ body.chase #reels-gl{z-index:6}
    winners and the line being walked stay at full strength. A new spin clears it (skin.js watchLines) */
 .grid .c > .ms{transition:opacity .25s ease-out}
 .grid.wins .c:not(.hit) > .ms{opacity:.42}
-.grid.wins .reel:not(:has(.c.hit)) .stackov{opacity:.55;transition:opacity .25s ease-out}
+.grid.wins .reel:not(.h-hit) .stackov{opacity:.55;transition:opacity .25s ease-out}
+
+/* ---------- pass 2 (2026-10-29): fewer things ticking per frame ----------
+   A running CSS animation costs a style update on the page's thread every frame (even one the compositor moves); a held
+   (paused) one costs nothing and stays exactly where it is, so holding never makes a symbol jump. */
+/* while the reels spin (#grid.sm-calm, spin-inject.js calm(): the tap until the last reel lands) every symbol holds. The
+   cells under a spinning strip are hidden anyway; a landed reel's new cells start their loops at rest when the board lets go */
+.grid.sm-calm .fx,.grid.sm-calm .fx *{animation-play-state:paused!important}
+/* the peeks behind the beams (squashed, mostly hidden) never move */
+.grid .pkw .fx,.grid .pkw .fx *{animation-play-state:paused!important}
+/* during the wins the symbols that stepped back (42%) hold still; the winners keep their beat */
+.grid.wins .c:not(.hit) .fx,.grid.wins .c:not(.hit) .fx *{animation-play-state:paused!important}
+/* the tease glow was the reel's animated box-shadow (a repaint every frame of the anticipation). It is now drawn once, at the
+   pulse's full size, and pulses by opacity on the compositor; the colour (--gl) and its fade when the reel stops are as before */
+.grid .reel > .rglow{animation:none!important;box-shadow:inset 5px 0 0 var(--gl),inset -5px 0 0 var(--gl),-10px 0 22px 0 var(--gl),10px 0 22px 0 var(--gl)}
+.grid .reel.tease > .rglow{animation:smtease .42s ease-in-out infinite alternate!important}
+@keyframes smtease{from{opacity:.6}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.grid .reel.tease > .rglow{animation-duration:.9s!important}}
+/* while the walk spotlights one line, the other winners hold too (they stay at full strength; only the line in the
+   spotlight dances, as before) */
+.grid.focusing .c:not(.focus) .fx,.grid.focusing .c:not(.focus) .fx *{animation-play-state:paused!important}
+/* the drawn win lines are hidden in this skin (skin.css #lineov .wl{visibility:hidden}): their foam loop no longer runs
+   behind the scenes (a style update per frame for nothing) */
+#lineov .wl{animation:none!important}
 
 </style>
+<script>
+// Mango Surf v3: smooth animation pass 2 (2026-10-29). The page's :has() rules, as plain classes.
+// A :has() rule on a big ancestor (body, .slot, the grid, a reel) makes the browser re-check it on every change below that
+// ancestor: every count-up digit, every landing and every win-walk step restyled every picture in the slot (the rule
+// ".slot:has(.stage.bonus) .sc-palm img" can only be tracked as "any img"). smooth-build.js rewrites those selectors to
+// the classes below, and this keeps the classes true, from the same DOM facts, in a MutationObserver (it runs before the
+// next frame is drawn, so no frame ever shows a stale state). None of these rules changes a box's size or place.
+//   body.h-cel   = body:has(#celebrate:not([hidden]))        body.h-slot = body:has(.slot:not([hidden]))
+//   .slot.h-bonus = .slot:has(.stage.bonus)
+//   .grid.h-hit / .gridbox.h-hit / .reel.h-hit = :has(.c.hit)          .reel.h-tape  = .reel:has(> .c.tape)
+//   .reel.h-stk  = :has(> .stackov)    .reel.h-stkb = :has(> .stackov:not(.building))    .reel.h-fold = :has(> .stackov.folding)
+//   .reel.h-walk = :has(> .stackov.v3walk)    .reel.h-strip = :has(> .strip)    .c.h-w = .c:has(> .ms-W)
+(function(){
+  'use strict';
+  var tg = function(el, c, on){ if (el && el.classList.contains(c) !== on) el.classList.toggle(c, on); };
+  var body = document.body, cel = document.getElementById('celebrate'), g = document.getElementById('grid');
+  var slots = Array.prototype.slice.call(document.querySelectorAll('.slot'));
+  function page(){
+    tg(body, 'h-cel', !!(cel && !cel.hidden));
+    tg(body, 'h-slot', slots.some(function(s){ return !s.hidden; }));
+    slots.forEach(function(s){ tg(s, 'h-bonus', !!s.querySelector('.stage.bonus')); });
+  }
+  function grid(){
+    if (!g) return; var any = false, reels = g.children;
+    for (var i = 0; i < reels.length; i++){ var r = reels[i]; if (!r.classList.contains('reel')) continue;
+      var hit = false, tape = false, stk = false, stkb = false, fold = false, walk = false, strip = false, k = r.children;
+      for (var j = 0; j < k.length; j++){ var e = k[j], cl = e.classList;
+        if (cl.contains('c')){ if (cl.contains('hit')) hit = true; if (cl.contains('tape')) tape = true;
+          var w = false, m = e.children; for (var n = 0; n < m.length; n++) if (m[n].classList.contains('ms-W')){ w = true; break; }
+          tg(e, 'h-w', w); }
+        else if (cl.contains('stackov')){ stk = true; if (!cl.contains('building')) stkb = true; if (cl.contains('folding')) fold = true; if (cl.contains('v3walk')) walk = true; }
+        else if (cl.contains('strip')) strip = true; }
+      if (!hit && r.querySelector('.c.hit')) hit = true;
+      if (hit) any = true;
+      tg(r, 'h-hit', hit); tg(r, 'h-tape', tape); tg(r, 'h-stk', stk); tg(r, 'h-stkb', stkb); tg(r, 'h-fold', fold); tg(r, 'h-walk', walk); tg(r, 'h-strip', strip); }
+    tg(g, 'h-hit', any); tg(g.parentElement, 'h-hit', any);
+  }
+  page(); grid();
+  try {
+    var opt = {attributes: true, attributeFilter: ['class', 'hidden']};
+    var po = new MutationObserver(page);
+    if (cel) po.observe(cel, opt); slots.forEach(function(s){ po.observe(s, opt); });
+    document.querySelectorAll('.slot .stage').forEach(function(s){ po.observe(s, opt); });
+    if (g) new MutationObserver(grid).observe(g, {subtree: true, childList: true, attributes: true, attributeFilter: ['class']});
+  } catch(e){}
+  window.MangoHas = {sync: function(){ page(); grid(); }};
+})();
+
+</script>
 </body>
 </html>
